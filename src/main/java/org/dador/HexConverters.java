@@ -3,10 +3,10 @@ package org.dador;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Collection of tools to manipulate String represented as Hex characters  hh
+ * Collection of tools to manipulate String represented as Hex characters  
  * Created by Damien Salvador on 18/10/2016.
  */
-public final class HexConverters {
+public class HexConverters {
 
     /**
      * Private constructor

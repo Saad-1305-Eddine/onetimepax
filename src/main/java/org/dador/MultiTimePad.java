@@ -1,7 +1,8 @@
 package org.dador;
 
-/**
- *
+/*CHOURAK FARAH
+ *GHALLOUS GHOFRANE
+ *MOUJAHID SAAD EDDINE
  */
 public class MultiTimePad {
 
@@ -45,10 +46,44 @@ public class MultiTimePad {
 
         System.out.println();
 
+
+
         key = new byte[msg1.length() / 2];
-        // TODO: renseigner les valeurs de la clé..
-        key[0] = 0 ;
+
+
+        key[0] = (byte) 0xd4^0x4e ;
         key[1] = 0x50;
+        key[2] = (byte) 0xcc;
+        key[3] = (byte) 0x9f^0x20;
+        key[4] = (byte) 0xdf^0x20;
+        key[5] = (byte) 0xdc^0x20;
+        key[6] = (byte) 0xe5^0x6b;
+        key[7] = (byte) 0xdb^0x20;
+        key[8] = (byte) 0xe8^0x65;
+        key[9] = (byte) 0x8b^0x20;
+        key[10] = (byte) 0xdc^0x69;
+        key[11] = (byte) 0x0f^0x6e;
+        key[12] = (byte) 0x87^0x67;
+        key[13] = (byte) 0xe2^0x79;
+        key[14] = (byte) 0xbf^0x20;
+        key[15] = (byte) 0x71^0x20;
+        key[16] = (byte) 0x0d^0x20;
+        key[17] = (byte) 0xe0^0x6c;
+        key[18] = (byte) 0xd4^0x64;
+        key[19] = (byte) 0x88^0x20;
+        key[20] = (byte) 0xf9^0x6e;
+        key[21] = (byte) 0x7c^0x74;
+        key[22] = (byte) 0x06^0x72;
+        key[23] = (byte) 0x6c^0x6c;
+        key[24] = (byte) 0xd9^0x6f;
+        key[25] = (byte) 0x6f^0x77;
+        key[26] = (byte) 0xf3^0x20;
+        key[27] = (byte) 0x32^0x6e;
+        key[28] = (byte) 0x66^0x65;
+        key[29] = (byte) 0xee^0x74;
+        key[30] = (byte) 0x51^0x2e;
+        
+        
 
 
         System.out.println("Key :");
@@ -63,7 +98,7 @@ public class MultiTimePad {
         i = 1;
         while (i < nbMsg) {
             // TODO : modifier la ligne suivante
-            tmpByteMsg = HexConverters.toByteArrayFromHex(messages[i]);
+            tmpByteMsg = HexConverters.xorArray(byteArrayMsg[0], byteArrayMsg[i]);
             System.out.print(i);
             System.out.print(": ");
             System.out.println( HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
@@ -79,7 +114,7 @@ public class MultiTimePad {
             tmpByteMsg = HexConverters.xorArray(key, byteArrayMsg[i]);
             System.out.print(i);
             System.out.print(": ");
-            System.out.println(HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
+            System.out.println(HexConverters.toPrintableString(tmpByteMsg));
             i++;
         }
     }
